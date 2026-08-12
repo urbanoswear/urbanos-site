@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050608">
+<title>URBANOS — Streetwear</title>
+<style>
+:root{
+  --black:#050608;
+  --dark:#0b0f12;
+  --blue:#18aee5;
+  --blue2:#78dfff;
+  --orange:#ff6414;
+  --white:#f5f7f8;
+  --muted:#9da7ad;
+  --line:rgba(255,255,255,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--black);color:var(--white);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(5,6,8,.78);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line)
+}
+.nav{max-width:1180px;margin:auto;height:74px;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-size:25px;font-weight:1000;letter-spacing:2px}
+.brand span:first-child{color:var(--blue)}
+.brand span:last-child{color:var(--orange)}
+nav{display:flex;gap:28px;color:#dce2e5;font-size:14px;font-weight:700}
+nav a:hover{color:var(--orange)}
+.cart-btn{border:1px solid var(--line);background:#0c1115;color:white;border-radius:12px;padding:11px 15px;cursor:pointer}
+.hero{
+  min-height:760px;display:grid;place-items:center;text-align:center;
+  position:relative;overflow:hidden;
+  background:
+   linear-gradient(rgba(5,6,8,.35),rgba(5,6,8,.86)),
+   url("urbanos-identidade.png") center/cover;
+}
+.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 42%,rgba(24,174,229,.16),transparent 28%),radial-gradient(circle at 70% 65%,rgba(255,100,20,.16),transparent 28%);pointer-events:none}
+.hero-content{position:relative;z-index:2;max-width:800px;padding:120px 22px 50px}
+.kicker{display:inline-block;border:1px solid rgba(120,223,255,.3);padding:8px 13px;border-radius:999px;color:var(--blue2);font-size:12px;font-weight:800;letter-spacing:2px;margin-bottom:18px}
+h1{font-size:clamp(52px,10vw,105px);line-height:.88;font-weight:1000;letter-spacing:-4px}
+h1 .b{color:var(--blue)} h1 .o{color:var(--orange)}
+.hero p{max-width:600px;margin:24px auto;color:#d3d9dc;font-size:18px;line-height:1.55}
+.cta{display:inline-flex;gap:10px;align-items:center;background:linear-gradient(100deg,var(--blue),var(--orange));padding:15px 24px;border-radius:12px;font-weight:1000;box-shadow:0 10px 40px rgba(24,174,229,.18);transition:.2s}
+.cta:hover{transform:translateY(-2px)}
+section{max-width:1180px;margin:auto;padding:85px 20px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:28px}
+.eyebrow{color:var(--orange);font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+h2{font-size:clamp(30px,5vw,48px);letter-spacing:-1.5px}
+.section-head p{color:var(--muted);max-width:420px;line-height:1.5}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:linear-gradient(145deg,#0c1115,#080a0c);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.25s}
+.card:hover{transform:translateY(-5px);border-color:rgba(24,174,229,.35)}
+.photo{height:360px;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,rgba(24,174,229,.18),transparent 28%),radial-gradient(circle at 70% 65%,rgba(255,100,20,.16),transparent 28%),#090c0f}
+.shirt{width:60%;height:72%;background:linear-gradient(135deg,#15191c,#050607);clip-path:polygon(20% 8%,38% 0,62% 0,80% 8%,100% 24%,84% 38%,75% 28%,75% 100%,25% 100%,25% 28%,16% 38%,0 24%);position:relative;filter:drop-shadow(0 20px 25px rgba(0,0,0,.5))}
+.shirt:after{content:"U";position:absolute;left:50%;top:35%;transform:translate(-50%,-50%);font-size:70px;font-weight:1000;color:var(--blue);text-shadow:5px 4px 0 var(--orange)}
+.info{padding:18px}.tag{font-size:11px;color:var(--blue2);font-weight:900;letter-spacing:1px}.name{font-size:19px;font-weight:900;margin:7px 0}.price{font-size:18px;font-weight:900;margin:10px 0 15px}.buy{width:100%;padding:12px;border:0;border-radius:10px;background:#f1f3f4;color:#050608;font-weight:900;cursor:pointer}.buy:hover{background:var(--orange);color:#fff}
+.banner{border:1px solid var(--line);border-radius:22px;overflow:hidden;min-height:300px;display:flex;align-items:center;background:linear-gradient(100deg,rgba(24,174,229,.18),rgba(255,100,20,.12)),url("urbanos-identidade.png") center/cover}
+.banner-inner{padding:45px;max-width:620px;background:linear-gradient(90deg,rgba(5,6,8,.95),rgba(5,6,8,.3),transparent)}
+.banner h2{margin-bottom:12px}.banner p{color:#d1d7da;line-height:1.6;margin-bottom:20px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.box{border:1px solid var(--line);border-radius:18px;padding:30px;background:#090c0f}.box h3{margin-bottom:10px}.box p{color:var(--muted);line-height:1.65}
+footer{border-top:1px solid var(--line);padding:35px 20px;color:var(--muted);text-align:center}
+footer strong{color:#fff}
+.drawer{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:100;display:none}
+.drawer.open{display:block}
+.panel{position:absolute;right:0;top:0;bottom:0;width:min(420px,92vw);background:#090c0f;padding:25px;border-left:1px solid var(--line);overflow:auto}
+.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px}.close{background:none;border:0;color:#fff;font-size:26px;cursor:pointer}
+.item{border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px}.item small{color:var(--muted)}
+.total{border-top:1px solid var(--line);margin-top:20px;padding-top:20px;font-size:20px;font-weight:900}
+.whats{display:block;text-align:center;margin-top:15px;background:#25d366;color:#061009;padding:14px;border-radius:10px;font-weight:1000}
+@media(max-width:800px){nav{display:none}.products{grid-template-columns:1fr 1fr}.about{grid-template-columns:1fr}.photo{height:300px}.hero{min-height:680px}}
+@media(max-width:520px){.products{grid-template-columns:1fr}.photo{height:350px}.section-head{display:block}.section-head p{margin-top:10px}.banner-inner{padding:30px 22px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="brand" href="#"><span>U</span><span>RBANOS</span></a>
+    <nav>
+      <a href="#colecao">Coleção</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a>
+    </nav>
+    <button class="cart-btn" onclick="openCart()">🛒 Carrinho (<span id="count">0</span>)</button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-content">
+    <div class="kicker">STREETWEAR • VILHENA/RO</div>
+    <h1><span class="b">U</span>RBAN<span class="o">OS</span></h1>
+    <p>Modelagem oversized, presença e identidade para quem não precisa seguir o padrão.</p>
+    <a class="cta" href="#colecao">VER COLEÇÃO →</a>
+  </div>
+</section>
+
+<section id="colecao">
+  <div class="section-head">
+    <div><div class="eyebrow">DROP URBANOS</div><h2>Escolha seu estilo.</h2></div>
+    <p>Troque as imagens, nomes e preços abaixo pelos seus produtos reais. O layout já está preparado para celular.</p>
+  </div>
+  <div class="products" id="products"></div>
+</section>
+
+<section>
+  <div class="banner">
+    <div class="banner-inner">
+      <div class="eyebrow">A identidade da rua</div>
+      <h2>Não é só roupa.</h2>
+      <p>É o jeito que você escolhe ocupar seu espaço.</p>
+      <a class="cta" href="#colecao">COMPRAR AGORA</a>
+    </div>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="section-head"><div><div class="eyebrow">URBANOS</div><h2>Feita para a vida real.</h2></div></div>
+  <div class="about">
+    <div class="box"><h3>Caimento oversized</h3><p>Uma modelagem pensada para entregar conforto e presença no look.</p></div>
+    <div class="box"><h3>Estética urbana</h3><p>Preto, azul e laranja formam a identidade visual da URBANOS em cada detalhe.</p></div>
+  </div>
+</section>
+</main>
+
+<footer id="contato">
+  <strong>URBANOS</strong> — Streetwear<br>
+  <span>Instagram: @urbanoswear • WhatsApp: (69) 99373-9006</span>
+</footer>
+
+<div class="drawer" id="drawer" onclick="if(event.target===this)closeCart()">
+  <div class="panel">
+    <div class="panel-head"><h2>Seu carrinho</h2><button class="close" onclick="closeCart()">×</button></div>
+    <div id="cartItems"><p style="color:#9da7ad">Seu carrinho está vazio.</p></div>
+    <div class="total">Total: R$ <span id="total">0,00</span></div>
+    <a class="whats" id="whats" href="#" target="_blank">FINALIZAR PELO WHATSAPP</a>
+  </div>
+</div>
+
+<script>
+const products = [
+ {id:1,name:"Oversized Urban Black",price:89.90,tag:"BEST SELLER"},
+ {id:2,name:"Oversized Blue Street",price:89.90,tag:"NOVO DROP"},
+ {id:3,name:"Oversized Orange Edition",price:89.90,tag:"LIMITADA"}
+];
+let cart=[];
+
+function money(v){return v.toLocaleString('pt-BR',{minimumFractionDigits:2})}
+function renderProducts(){
+ document.getElementById('products').innerHTML=products.map(p=>`
+ <article class="card">
+   <div class="photo"><div class="shirt"></div></div>
+   <div class="info">
+    <div class="tag">${p.tag}</div><div class="name">${p.name}</div>
+    <div class="price">R$ ${money(p.price)}</div>
+    <button class="buy" onclick="add(${p.id})">ADICIONAR AO CARRINHO</button>
+   </div>
+ </article>`).join('');
+}
+function add(id){cart.push(products.find(p=>p.id===id));renderCart();openCart()}
+function renderCart(){
+ document.getElementById('count').textContent=cart.length;
+ const box=document.getElementById('cartItems');
+ if(!cart.length){box.innerHTML='<p style="color:#9da7ad">Seu carrinho está vazio.</p>'}
+ else{
+  box.innerHTML=cart.map((p,i)=>`<div class="item"><b>${p.name}</b><br><small>R$ ${money(p.price)} <button style="float:right;background:none;border:0;color:#ff6414;cursor:pointer" onclick="removeItem(${i})">REMOVER</button></small></div>`).join('');
+ }
+ const total=cart.reduce((s,p)=>s+p.price,0);
+ document.getElementById('total').textContent=money(total);
+ const text=cart.length ? 'Olá! Quero comprar na URBANOS:%0A'+cart.map(p=>'- '+p.name+' — R$ '+money(p.price)).join('%0A')+'%0A%0ATotal: R$ '+money(total) : 'Olá! Quero conhecer a coleção da URBANOS.';
+ document.getElementById('whats').href='https://wa.me/5569993739006?text='+text;
+}
+function removeItem(i){cart.splice(i,1);renderCart()}
+function openCart(){document.getElementById('drawer').classList.add('open')}
+function closeCart(){document.getElementById('drawer').classList.remove('open')}
+renderProducts();renderCart();
+</script>
+</body>
+</html>
